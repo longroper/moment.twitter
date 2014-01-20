@@ -1,8 +1,4 @@
-hasModule = module?.exports? and require?
-if hasModule
-    moment = require 'moment'
-else
-    moment = @moment
+moment = @moment
 
 
 # Times in millisecond
@@ -69,7 +65,4 @@ moment.fn.twitter = moment.fn.twitterShort = ->
     twitterFormat.call @, 'short'
 
 
-if hasModule
-    module.exports = moment
-else
-    @moment = moment
+@moment = moment
