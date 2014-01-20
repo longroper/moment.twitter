@@ -1,13 +1,8 @@
 (function() {
-  var day, formats, hasModule, hour, minute, moment, second, twitterFormat, week;
+  var day, formats, hour, minute, moment, second, twitterFormat, week;
 
-  hasModule = ((typeof module !== "undefined" && module !== null ? module.exports : void 0) != null) && (typeof require !== "undefined" && require !== null);
 
-  if (hasModule) {
-    moment = require('moment');
-  } else {
-    moment = this.moment;
-  }
+  moment = this.moment;
 
   second = 1e3;
 
@@ -79,10 +74,7 @@
     return twitterFormat.call(this, 'short');
   };
 
-  if (hasModule) {
-    module.exports = moment;
-  } else {
-    this.moment = moment;
-  }
+
+  this.moment = moment;
 
 }).call(this);
